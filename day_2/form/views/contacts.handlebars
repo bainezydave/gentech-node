@@ -1,0 +1,22 @@
+<h1>All Contacts</h1>
+
+<table>
+    <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Enquiry</th>
+    </thead>
+
+    <tbody>
+        {{#each allContacts}}
+            <tr class="contact">
+                <td>{{this.firstName}}</td>
+                <td>{{this.lastName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.enquiry}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+

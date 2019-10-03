@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Locations</title>
+</head>
+<body>
+    {{{body}}}
+    
+<script>
+    async function getLocationMethod1()
+    {
+        let data = await fetch("http://ip-api.com/json/");
+        let result = await data.json();
+        
+        await fetch('/',
+        {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            headers: { "Content-Type": "application/json" },
+            referrer: "no-referrer-when-downgrade",
+            body: JSON.stringify(result)
+        });
+
+        let locationData = await fetch("/locations");
+        let locations = await locationData.json();
+
+        console.table(locations)
+    }
+
+    getLocationMethod1();
+
+
+</script>
+</body>
+</html>
