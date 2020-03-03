@@ -1,0 +1,30 @@
+<h1>Authors</h1>
+
+<a href="/authors/new" class="waves-effect waves-light btn">
+    <i class="material-icons left">create</i>New Author
+</a>
+
+<table>
+    <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Bio</th>
+        <th></th>
+    </thead>
+
+    <tbody>
+        {{#each authors}}
+            <tr>
+                <td>{{this.first_name}}</td>
+                <td>{{this.last_name}}</td>
+                <td>{{this.gender}}</td>
+                <td>{{this.bio}}</td>
+                <td><a href="/author/{{this._id}}?_method=DELETE">Delete</a></td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{!-- <a href="/authors/{{this._id}}">View Author</a> --}}
+

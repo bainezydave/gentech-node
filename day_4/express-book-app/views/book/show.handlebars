@@ -1,0 +1,16 @@
+<h1>Book</h1>
+<p>name: {{book.title}} </p>
+<p>Published: {{book.published}} </p>
+<a href="/authors/{{book._id}}">{{book.author.name}}</a>
+
+{{#each book.comments}}
+    <p>{{this.body}}</p>
+    <span>{{this.created}}</span>
+{{/each}}
+
+<form action="POST" action="/books/{{book._id}}/comments">
+    <div>
+        <textarea name="body"></textarea>
+    </div>
+    <input type="submit" value="SUBMIT">
+</form>
